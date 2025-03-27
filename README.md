@@ -59,44 +59,44 @@ This is a full-stack e-commerce application that allows users to view and purcha
 
 1. Clone the repository:
 
-```bash
-   git clone https://github.com/yourusername/ecommerce-app.git
-```
+``bash
+git clone https://github.com/yourusername/ecommerce-app.git
+``
 
 2. Navigate to the backend folder:
 ```bash
-	cd ecommerce-app
+cd ecommerce-app
 ```
 
 3. Install PHP dependencies using Composer:
 ```bash
-	composer install
+composer install
 ```
 
 4. Set up your environment file:
 ```bash
-	cp .env.example .env
+cp .env.example .env
 ```
 Edit the .env file with your local environment settings (database, email, etc.).
 
 5. Generate an application key:
 ```bash
-	php artisan key:generate
+php artisan key:generate
 ```
 
 6. Run migrations to set up the database:
 ```bash
-	php artisan migrate
+php artisan migrate
 ```
 
 7. Optionally, run seeders to populate the database with dummy data:
 ```bash
-	php artisan db:seed
+php artisan db:seed
 ```
 
 8. Start the Laravel server:
 ```bash
-	php artisan serve
+php artisan serve
 ```
 Your backend will now be running at http://127.0.0.1:8000.
 
@@ -104,12 +104,12 @@ Your backend will now be running at http://127.0.0.1:8000.
 
 1. Navigate to the frontend directory:
 ```bash
-	cd ecommerce-frontend-app
+cd ecommerce-frontend-app
 ```
 
 2. Install JavaScript dependencies using npm:
 ```bash
-	npm install
+npm install
 ```
 
 3. Set up your environment variables (for API integration):
@@ -117,12 +117,12 @@ Your backend will now be running at http://127.0.0.1:8000.
 - Create a ```.env``` file in the frontend directory.
 - Add the following keys:
 ```ini
-	REACT_APP_API_URL=http://127.0.0.1:8000/api
+REACT_APP_API_URL=http://127.0.0.1:8000/api
 ```
 
 4. Start the React development server:
 ```bash
-	npm start
+npm start
 ```
 Your frontend will now be running at ```http://localhost:3000```.
 
