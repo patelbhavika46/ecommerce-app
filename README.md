@@ -1,6 +1,6 @@
 # E-commerce Application
 
-An e-commerce application built with **Laravel** (backend) and **React.js** (frontend) for managing products, orders, and user authentication.
+An e-commerce application built with **Laravel** (backend) and **React.js** and **TypeScript** (frontend) for managing products, orders, and user authentication.
 
 ## Table of Contents
 
@@ -31,7 +31,7 @@ This is a full-stack e-commerce application that allows users to view and purcha
 ## Technologies Used
 
 - **Backend**: 
-  - Laravel 9.x (PHP)
+  - Laravel 10.48.29 (PHP)
   - MySQL or PostgreSQL for database
   - Socialite (for OAuth login with Google)
   - Laravel Sanctum (for API authentication)
@@ -39,12 +39,9 @@ This is a full-stack e-commerce application that allows users to view and purcha
 
 - **Frontend**: 
   - React.js (with TypeScript)
-  - Redux (optional for state management)
+  - Redux (for state management)
   - React Router (for navigation)
   - Tailwind CSS (for styling)
-
-- **Deployment**:
-  - Heroku, AWS, or DigitalOcean for hosting
 
 - **Other Tools**:
   - Git (version control)
@@ -59,9 +56,9 @@ This is a full-stack e-commerce application that allows users to view and purcha
 
 1. Clone the repository:
 
-``bash
+```bash
 git clone https://github.com/yourusername/ecommerce-app.git
-``
+```
 
 2. Navigate to the backend folder:
 ```bash
