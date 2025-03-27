@@ -1,66 +1,174 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-commerce Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+An e-commerce application built with **Laravel** (backend) and **React.js** (frontend) for managing products, orders, and user authentication.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+  - [Backend Setup (Laravel)](#backend-setup-laravel)
+  - [Frontend Setup (React.js)](#frontend-setup-reactjs)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Running Tests](#running-tests)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Project Overview
 
-## Learning Laravel
+This is a full-stack e-commerce application that allows users to view and purchase products, manage their carts, and complete transactions via a payment gateway. The backend is built with **Laravel**, while the frontend is developed using **React.js** and **TypeScript**.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: Laravel API with user authentication, product management, and order processing.
+- **Frontend**: React.js application for dynamic product display, cart management, and checkout.
+- **Payment Integration**: Stripe and PayPal integration for processing payments.
+  
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Technologies Used
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend**: 
+  - Laravel 9.x (PHP)
+  - MySQL or PostgreSQL for database
+  - Socialite (for OAuth login with Google)
+  - Laravel Sanctum (for API authentication)
+  - Stripe/PayPal for payment processing
 
-## Laravel Sponsors
+- **Frontend**: 
+  - React.js (with TypeScript)
+  - Redux (optional for state management)
+  - React Router (for navigation)
+  - Tailwind CSS (for styling)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Deployment**:
+  - Heroku, AWS, or DigitalOcean for hosting
 
-### Premium Partners
+- **Other Tools**:
+  - Git (version control)
+  - Composer (PHP package manager)
+  - NPM (JavaScript package manager)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Backend Setup (Laravel)
 
-## Code of Conduct
+1. Clone the repository:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+   git clone https://github.com/yourusername/ecommerce-app.git
+```
 
-## Security Vulnerabilities
+2. Navigate to the backend folder:
+```bash
+	cd ecommerce-app
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. Install PHP dependencies using Composer:
+```bash
+	composer install
+```
 
-## License
+4. Set up your environment file:
+```bash
+	cp .env.example .env
+```
+Edit the .env file with your local environment settings (database, email, etc.).
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. Generate an application key:
+```bash
+	php artisan key:generate
+```
+
+6. Run migrations to set up the database:
+```bash
+	php artisan migrate
+```
+
+7. Optionally, run seeders to populate the database with dummy data:
+```bash
+	php artisan db:seed
+```
+
+8. Start the Laravel server:
+```bash
+	php artisan serve
+```
+Your backend will now be running at http://127.0.0.1:8000.
+
+### Frontend Setup (React.js)
+
+1. Navigate to the frontend directory:
+```bash
+	cd ecommerce-frontend-app
+```
+
+2. Install JavaScript dependencies using npm:
+```bash
+	npm install
+```
+
+3. Set up your environment variables (for API integration):
+
+- Create a ```.env``` file in the frontend directory.
+- Add the following keys:
+```ini
+	REACT_APP_API_URL=http://127.0.0.1:8000/api
+```
+
+4. Start the React development server:
+```bash
+	npm start
+```
+Your frontend will now be running at ```http://localhost:3000```.
+
+## Configuration
+
+1. **Set Up Mail (Optional):** If you're integrating email services for user registration or order confirmations, configure the mail driver in the ```.env``` file:
+```ini
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailgun.org
+MAIL_PORT=587
+MAIL_USERNAME=your_mailgun_username
+MAIL_PASSWORD=your_mailgun_password
+MAIL_ENCRYPTION=tls
+```
+2. **Payment Gateway:** Configure your Stripe or PayPal keys in the ```.env``` file for payment integration.
+
+## Usage
+
+- **Authentication:** Users can log in using Google OAuth through Laravel Socialite. The system supports both email/password and social login.
+- **Admin Panel:** The admin can manage products, users, and orders through a basic dashboard.
+- **Product Management:** Add, update, and delete products with categories, images, and descriptions.
+- **Cart & Checkout:** Users can add products to their cart, proceed to checkout, and complete payments via Stripe or PayPal.
+
+## API Documentation
+
+### Authentication
+- **POST** ```/api/login```: Login with email/password.
+- **POST** ```/api/google/login```: Login with Google OAuth (using Socialite).
+
+### Products
+- **GET** ```/api/products```: Fetch all products.
+- **GET** ```/api/products/{id}```: Fetch a single product by ID.
+
+### Cart
+- **GET** ```/api/cart```: Get the current user's cart.
+- **POST** ```/api/cart/add```: Add a product to the cart.
+- **POST** ```/api/cart/checkout:``` Proceed to checkout and pay.
+
+## Running Tests
+To run the tests for your Laravel backend, use PHPUnit:
+```bash
+php artisan test
+```
+To run frontend tests, use:
+```bash
+npm test
+```
+##License
+This project is licensed under the MIT License - see the LICENSE file for details.
