@@ -1,29 +1,23 @@
-<!-- resources/views/home.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-	<!-- resources/views/layouts/app.blade.php or another Blade file -->
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-	@if (Auth::check())
-    	<!-- If the user is logged in, show the logout link -->
-	    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-	        Logout
-	    </a>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-	    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-	        @csrf
-	    </form>
-	@endif
-
-
-    <h1>Welcome to the Home Page!</h1>
-    <p>You are successfully logged in.</p>
-
-</body>
-</html>
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
